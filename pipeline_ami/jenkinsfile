@@ -9,26 +9,26 @@ pipeline {
         }
         stage('Build EC2') {
             steps {
-                sh "chmod +x deploy.sh"
-                sh deploy.sh"
+                sh "chmod +x pipeline_ami/deploy.sh"
+                sh "pipeline_ami/deploy.sh"
             }
         }
         stage('Test kubernetes e docker') {
             steps {
-                sh "chmod +x 02-pipelineAMI/test.sh"
-                sh "02-pipelineAMI/test.sh"
+                sh "chmod +x pipeline_ami/test.sh"
+                sh "pipeline_ami/test.sh"
             }
         }
         stage('Creating ami') {
             steps {
-                sh "chmod +x 02-pipelineAMI/package-ami.sh"
-                sh "02-pipelineAMI/package-ami.sh"
+                sh "chmod +x pipeline_ami/package-ami.sh"
+                sh "pipeline_ami/package-ami.sh"
             }
         }
         stage('Destroy') {
             steps {
-                sh "chmod +x 02-pipelineAMI/destroy.sh"
-                sh "02-pipelineAMI/destroy.sh"
+                sh "chmod +x pipeline_ami/destroy.sh"
+                sh "pipeline_ami/destroy.sh"
             }
         }
     }
