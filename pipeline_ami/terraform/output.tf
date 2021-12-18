@@ -6,3 +6,11 @@ output "ec2" {
     "ssh -i /home/ubuntu/ ~/ProjetoFinal/authentication/id_rsa ubuntu@${aws_instance.ec2.public_dns}"
   ]
 }
+
+
+output "output_subnetes" {
+  value = [
+    for item in data.aws_subnet.selected :
+    "${item.id} - ${item.cidr_block} - ${item.tags.Name}"
+  ]
+}

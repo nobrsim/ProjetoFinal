@@ -1,5 +1,5 @@
 resource "aws_instance" "ec2" {
-  subnet_id                   = var.az
+  subnet_id                   = var.subnet_id
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.tipo
   # key_name                    = aws_key_pair.public_key.id
