@@ -9,13 +9,7 @@ variable "tipo" {
 }
 
 # encontrar uma forma de declarar somente, por exemplo, 1a e o código achar o id da subnet.
-variable "az" {
+variable "subnet_id" {
   type = string
   description = "Digite o tipo da instancia"
 }
-
-# variable "versao" {
-#   type        = string
-#   description = "Qual versão da imagem?"
-# }
-

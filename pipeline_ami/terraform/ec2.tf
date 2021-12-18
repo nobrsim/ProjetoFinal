@@ -1,9 +1,10 @@
 resource "aws_instance" "ec2" {
-  subnet_id                   = var.az
+  subnet_id                   = var.subnet_id
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.tipo
   # key_name                    = aws_key_pair.public_key.id
-  key_name                    = "kp-turma-victor-dev"
+  # key_name                    = "kp-turma-victor-dev"
+  key_name                    = "kp-turma3-talyson-1"
   associate_public_ip_address = true
   vpc_security_group_ids      = ["${aws_security_group.allow_ssh.id}"]
   root_block_device {
