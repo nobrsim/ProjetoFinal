@@ -489,3 +489,4 @@ FodyWeavers.xsd
 
 *id_rsa*
 *id_rsa.pub
+*.lock.hcl*
