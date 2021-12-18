@@ -27,14 +27,14 @@ output "rt-priv" {
   ]
 }
 
-output "ng" {
-  value       = [
-    for item in aws_nat_gateway.turma3_grupo:
-    <<EOF
-    ng: ${item.id}
-    EOF
-  ]
-}
+# output "ng" {
+#   value       = [
+#     for item in aws_nat_gateway.turma3_grupo:
+#     <<EOF
+#     ng: ${item.id}
+#     EOF
+#   ]
+# }
 
 
 output "summary" {

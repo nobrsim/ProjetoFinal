@@ -1,0 +1,639 @@
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_eip.nat_gateway[0] will be created
+  + resource "aws_eip" "nat_gateway" {
+      + allocation_id        = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = (known after apply)
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + tags_all             = (known after apply)
+      + vpc                  = true
+    }
+
+  # aws_eip.nat_gateway[1] will be created
+  + resource "aws_eip" "nat_gateway" {
+      + allocation_id        = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = (known after apply)
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + tags_all             = (known after apply)
+      + vpc                  = true
+    }
+
+  # aws_eip.nat_gateway[2] will be created
+  + resource "aws_eip" "nat_gateway" {
+      + allocation_id        = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = (known after apply)
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + tags_all             = (known after apply)
+      + vpc                  = true
+    }
+
+  # aws_internet_gateway.gw will be created
+  + resource "aws_internet_gateway" "gw" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + tags     = {
+          + "Name" = "gw-turma3-grupo6-tf"
+        }
+      + tags_all = {
+          + "Name" = "gw-turma3-grupo6-tf"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # aws_nat_gateway.turma3_grupo6[0] will be created
+  + resource "aws_nat_gateway" "turma3_grupo6" {
+      + allocation_id        = (known after apply)
+      + connectivity_type    = "public"
+      + id                   = (known after apply)
+      + network_interface_id = (known after apply)
+      + private_ip           = (known after apply)
+      + public_ip            = (known after apply)
+      + subnet_id            = (known after apply)
+      + tags                 = {
+          + "Name" = "ng-turma3-grupo6-aza-priv-tf"
+        }
+      + tags_all             = {
+          + "Name" = "ng-turma3-grupo6-aza-priv-tf"
+        }
+    }
+
+  # aws_nat_gateway.turma3_grupo6[1] will be created
+  + resource "aws_nat_gateway" "turma3_grupo6" {
+      + allocation_id        = (known after apply)
+      + connectivity_type    = "public"
+      + id                   = (known after apply)
+      + network_interface_id = (known after apply)
+      + private_ip           = (known after apply)
+      + public_ip            = (known after apply)
+      + subnet_id            = (known after apply)
+      + tags                 = {
+          + "Name" = "ng-turma3-grupo6-azb-priv-tf"
+        }
+      + tags_all             = {
+          + "Name" = "ng-turma3-grupo6-azb-priv-tf"
+        }
+    }
+
+  # aws_nat_gateway.turma3_grupo6[2] will be created
+  + resource "aws_nat_gateway" "turma3_grupo6" {
+      + allocation_id        = (known after apply)
+      + connectivity_type    = "public"
+      + id                   = (known after apply)
+      + network_interface_id = (known after apply)
+      + private_ip           = (known after apply)
+      + public_ip            = (known after apply)
+      + subnet_id            = (known after apply)
+      + tags                 = {
+          + "Name" = "ng-turma3-grupo6-azc-priv-tf"
+        }
+      + tags_all             = {
+          + "Name" = "ng-turma3-grupo6-azc-priv-tf"
+        }
+    }
+
+  # aws_route_table.rt_terraform_priv[0] will be created
+  + resource "aws_route_table" "rt_terraform_priv" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = [
+          + {
+              + carrier_gateway_id         = ""
+              + cidr_block                 = "0.0.0.0/0"
+              + destination_prefix_list_id = ""
+              + egress_only_gateway_id     = ""
+              + gateway_id                 = ""
+              + instance_id                = ""
+              + ipv6_cidr_block            = ""
+              + local_gateway_id           = ""
+              + nat_gateway_id             = (known after apply)
+              + network_interface_id       = ""
+              + transit_gateway_id         = ""
+              + vpc_endpoint_id            = ""
+              + vpc_peering_connection_id  = ""
+            },
+        ]
+      + tags             = {
+          + "Name" = "rt-turma3-grupo6-aza-priv-tf"
+        }
+      + tags_all         = {
+          + "Name" = "rt-turma3-grupo6-aza-priv-tf"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # aws_route_table.rt_terraform_priv[1] will be created
+  + resource "aws_route_table" "rt_terraform_priv" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = [
+          + {
+              + carrier_gateway_id         = ""
+              + cidr_block                 = "0.0.0.0/0"
+              + destination_prefix_list_id = ""
+              + egress_only_gateway_id     = ""
+              + gateway_id                 = ""
+              + instance_id                = ""
+              + ipv6_cidr_block            = ""
+              + local_gateway_id           = ""
+              + nat_gateway_id             = (known after apply)
+              + network_interface_id       = ""
+              + transit_gateway_id         = ""
+              + vpc_endpoint_id            = ""
+              + vpc_peering_connection_id  = ""
+            },
+        ]
+      + tags             = {
+          + "Name" = "rt-turma3-grupo6-azb-priv-tf"
+        }
+      + tags_all         = {
+          + "Name" = "rt-turma3-grupo6-azb-priv-tf"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # aws_route_table.rt_terraform_priv[2] will be created
+  + resource "aws_route_table" "rt_terraform_priv" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = [
+          + {
+              + carrier_gateway_id         = ""
+              + cidr_block                 = "0.0.0.0/0"
+              + destination_prefix_list_id = ""
+              + egress_only_gateway_id     = ""
+              + gateway_id                 = ""
+              + instance_id                = ""
+              + ipv6_cidr_block            = ""
+              + local_gateway_id           = ""
+              + nat_gateway_id             = (known after apply)
+              + network_interface_id       = ""
+              + transit_gateway_id         = ""
+              + vpc_endpoint_id            = ""
+              + vpc_peering_connection_id  = ""
+            },
+        ]
+      + tags             = {
+          + "Name" = "rt-turma3-grupo6-azc-priv-tf"
+        }
+      + tags_all         = {
+          + "Name" = "rt-turma3-grupo6-azc-priv-tf"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # aws_route_table.rt_terraform_pub will be created
+  + resource "aws_route_table" "rt_terraform_pub" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = [
+          + {
+              + carrier_gateway_id         = ""
+              + cidr_block                 = "0.0.0.0/0"
+              + destination_prefix_list_id = ""
+              + egress_only_gateway_id     = ""
+              + gateway_id                 = (known after apply)
+              + instance_id                = ""
+              + ipv6_cidr_block            = ""
+              + local_gateway_id           = ""
+              + nat_gateway_id             = ""
+              + network_interface_id       = ""
+              + transit_gateway_id         = ""
+              + vpc_endpoint_id            = ""
+              + vpc_peering_connection_id  = ""
+            },
+        ]
+      + tags             = {
+          + "Name" = "rt-turma3-grupo6-tf"
+        }
+      + tags_all         = {
+          + "Name" = "rt-turma3-grupo6-tf"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # aws_route_table_association.a[0] will be created
+  + resource "aws_route_table_association" "a" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # aws_route_table_association.a[1] will be created
+  + resource "aws_route_table_association" "a" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # aws_route_table_association.a[2] will be created
+  + resource "aws_route_table_association" "a" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # aws_route_table_association.b[0] will be created
+  + resource "aws_route_table_association" "b" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # aws_route_table_association.b[1] will be created
+  + resource "aws_route_table_association" "b" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # aws_route_table_association.b[2] will be created
+  + resource "aws_route_table_association" "b" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # aws_subnet.my_subnets[0] will be created
+  + resource "aws_subnet" "my_subnets" {
+      + arn                             = (known after apply)
+      + assign_ipv6_address_on_creation = false
+      + availability_zone               = "sa-east-1a"
+      + availability_zone_id            = (known after apply)
+      + cidr_block                      = "10.60.10.0/24"
+      + id                              = (known after apply)
+      + ipv6_cidr_block_association_id  = (known after apply)
+      + map_public_ip_on_launch         = false
+      + owner_id                        = (known after apply)
+      + tags                            = {
+          + "Name" = "sn-turma3-grupo6-aza-pub-tf"
+        }
+      + tags_all                        = {
+          + "Name" = "sn-turma3-grupo6-aza-pub-tf"
+        }
+      + vpc_id                          = (known after apply)
+    }
+
+  # aws_subnet.my_subnets[1] will be created
+  + resource "aws_subnet" "my_subnets" {
+      + arn                             = (known after apply)
+      + assign_ipv6_address_on_creation = false
+      + availability_zone               = "sa-east-1b"
+      + availability_zone_id            = (known after apply)
+      + cidr_block                      = "10.60.20.0/24"
+      + id                              = (known after apply)
+      + ipv6_cidr_block_association_id  = (known after apply)
+      + map_public_ip_on_launch         = false
+      + owner_id                        = (known after apply)
+      + tags                            = {
+          + "Name" = "sn-turma3-grupo6-azb-pub-tf"
+        }
+      + tags_all                        = {
+          + "Name" = "sn-turma3-grupo6-azb-pub-tf"
+        }
+      + vpc_id                          = (known after apply)
+    }
+
+  # aws_subnet.my_subnets[2] will be created
+  + resource "aws_subnet" "my_subnets" {
+      + arn                             = (known after apply)
+      + assign_ipv6_address_on_creation = false
+      + availability_zone               = "sa-east-1c"
+      + availability_zone_id            = (known after apply)
+      + cidr_block                      = "10.60.30.0/24"
+      + id                              = (known after apply)
+      + ipv6_cidr_block_association_id  = (known after apply)
+      + map_public_ip_on_launch         = false
+      + owner_id                        = (known after apply)
+      + tags                            = {
+          + "Name" = "sn-turma3-grupo6-azc-pub-tf"
+        }
+      + tags_all                        = {
+          + "Name" = "sn-turma3-grupo6-azc-pub-tf"
+        }
+      + vpc_id                          = (known after apply)
+    }
+
+  # aws_subnet.subnets_priv[0] will be created
+  + resource "aws_subnet" "subnets_priv" {
+      + arn                             = (known after apply)
+      + assign_ipv6_address_on_creation = false
+      + availability_zone               = "sa-east-1a"
+      + availability_zone_id            = (known after apply)
+      + cidr_block                      = "10.60.40.0/24"
+      + id                              = (known after apply)
+      + ipv6_cidr_block_association_id  = (known after apply)
+      + map_public_ip_on_launch         = false
+      + owner_id                        = (known after apply)
+      + tags                            = {
+          + "Name" = "sn-turma3-grupo6-aza-priv-tf"
+        }
+      + tags_all                        = {
+          + "Name" = "sn-turma3-grupo6-aza-priv-tf"
+        }
+      + vpc_id                          = (known after apply)
+    }
+
+  # aws_subnet.subnets_priv[1] will be created
+  + resource "aws_subnet" "subnets_priv" {
+      + arn                             = (known after apply)
+      + assign_ipv6_address_on_creation = false
+      + availability_zone               = "sa-east-1b"
+      + availability_zone_id            = (known after apply)
+      + cidr_block                      = "10.60.50.0/24"
+      + id                              = (known after apply)
+      + ipv6_cidr_block_association_id  = (known after apply)
+      + map_public_ip_on_launch         = false
+      + owner_id                        = (known after apply)
+      + tags                            = {
+          + "Name" = "sn-turma3-grupo6-azb-priv-tf"
+        }
+      + tags_all                        = {
+          + "Name" = "sn-turma3-grupo6-azb-priv-tf"
+        }
+      + vpc_id                          = (known after apply)
+    }
+
+  # aws_subnet.subnets_priv[2] will be created
+  + resource "aws_subnet" "subnets_priv" {
+      + arn                             = (known after apply)
+      + assign_ipv6_address_on_creation = false
+      + availability_zone               = "sa-east-1c"
+      + availability_zone_id            = (known after apply)
+      + cidr_block                      = "10.60.60.0/24"
+      + id                              = (known after apply)
+      + ipv6_cidr_block_association_id  = (known after apply)
+      + map_public_ip_on_launch         = false
+      + owner_id                        = (known after apply)
+      + tags                            = {
+          + "Name" = "sn-turma3-grupo6-azc-priv-tf"
+        }
+      + tags_all                        = {
+          + "Name" = "sn-turma3-grupo6-azc-priv-tf"
+        }
+      + vpc_id                          = (known after apply)
+    }
+
+  # aws_vpc.main will be created
+  + resource "aws_vpc" "main" {
+      + arn                            = (known after apply)
+      + cidr_block                     = "10.60.0.0/16"
+      + default_network_acl_id         = (known after apply)
+      + default_route_table_id         = (known after apply)
+      + default_security_group_id      = (known after apply)
+      + dhcp_options_id                = (known after apply)
+      + enable_classiclink             = (known after apply)
+      + enable_classiclink_dns_support = (known after apply)
+      + enable_dns_hostnames           = (known after apply)
+      + enable_dns_support             = true
+      + id                             = (known after apply)
+      + instance_tenancy               = "default"
+      + ipv6_association_id            = (known after apply)
+      + ipv6_cidr_block                = (known after apply)
+      + main_route_table_id            = (known after apply)
+      + owner_id                       = (known after apply)
+      + tags                           = {
+          + "Name" = "vpc-turma3-grupo6-tf"
+        }
+      + tags_all                       = {
+          + "Name" = "vpc-turma3-grupo6-tf"
+        }
+    }
+
+Plan: 24 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + rt-priv      = [
+      + (known after apply),
+      + (known after apply),
+      + (known after apply),
+    ]
+  + subnets_priv = [
+      + <<-EOT
+                vpc_name: sn-turma3-grupo6-aza-priv-tf
+                cidr_block: 10.60.40.0/24
+        EOT,
+      + <<-EOT
+                vpc_name: sn-turma3-grupo6-azb-priv-tf
+                cidr_block: 10.60.50.0/24
+        EOT,
+      + <<-EOT
+                vpc_name: sn-turma3-grupo6-azc-priv-tf
+                cidr_block: 10.60.60.0/24
+        EOT,
+    ]
+  + subnets_pub  = [
+      + <<-EOT
+                vpc_name: sn-turma3-grupo6-aza-pub-tf
+                cidr_block: 10.60.10.0/24
+        EOT,
+      + <<-EOT
+                vpc_name: sn-turma3-grupo6-azb-pub-tf
+                cidr_block: 10.60.20.0/24
+        EOT,
+      + <<-EOT
+                vpc_name: sn-turma3-grupo6-azc-pub-tf
+                cidr_block: 10.60.30.0/24
+        EOT,
+    ]
+  + summary      = [
+      + (known after apply),
+    ]
+aws_eip.nat_gateway[2]: Creating...
+aws_eip.nat_gateway[1]: Creating...
+aws_eip.nat_gateway[0]: Creating...
+aws_vpc.main: Creating...
+aws_eip.nat_gateway[1]: Creation complete after 0s [id=eipalloc-0f7b4185c50e2b60d]
+aws_eip.nat_gateway[0]: Creation complete after 0s [id=eipalloc-0df946165da0225de]
+aws_eip.nat_gateway[2]: Creation complete after 0s [id=eipalloc-0dc6c46ff0e5e3e9d]
+aws_vpc.main: Creation complete after 1s [id=vpc-06021516ae113876e]
+aws_subnet.my_subnets[1]: Creating...
+aws_subnet.subnets_priv[1]: Creating...
+aws_subnet.subnets_priv[0]: Creating...
+aws_internet_gateway.gw: Creating...
+aws_subnet.my_subnets[0]: Creating...
+aws_subnet.my_subnets[2]: Creating...
+aws_subnet.subnets_priv[2]: Creating...
+aws_subnet.my_subnets[0]: Creation complete after 0s [id=subnet-0f725dfea2c9c8bd9]
+aws_subnet.subnets_priv[2]: Creation complete after 0s [id=subnet-0ef5293c612f61d26]
+aws_subnet.subnets_priv[1]: Creation complete after 0s [id=subnet-0b18c38c40226df02]
+aws_subnet.my_subnets[2]: Creation complete after 0s [id=subnet-05923c23a8257bf86]
+aws_internet_gateway.gw: Creation complete after 0s [id=igw-0704d9b5225904020]
+aws_subnet.subnets_priv[0]: Creation complete after 0s [id=subnet-0c1026aeb1f1e5c85]
+aws_route_table.rt_terraform_pub: Creating...
+aws_nat_gateway.turma3_grupo6[1]: Creating...
+aws_nat_gateway.turma3_grupo6[0]: Creating...
+aws_nat_gateway.turma3_grupo6[2]: Creating...
+aws_subnet.my_subnets[1]: Creation complete after 1s [id=subnet-0d376f35bf867e7ca]
+aws_route_table.rt_terraform_pub: Creation complete after 1s [id=rtb-0d73eacb95d616289]
+aws_route_table_association.a[1]: Creating...
+aws_route_table_association.a[0]: Creating...
+aws_route_table_association.a[2]: Creating...
+aws_route_table_association.a[2]: Creation complete after 0s [id=rtbassoc-0834e80e5ae058410]
+aws_route_table_association.a[1]: Creation complete after 1s [id=rtbassoc-0621f62975a09c04f]
+aws_nat_gateway.turma3_grupo6[1]: Still creating... [10s elapsed]
+aws_nat_gateway.turma3_grupo6[0]: Still creating... [10s elapsed]
+aws_nat_gateway.turma3_grupo6[2]: Still creating... [10s elapsed]
+aws_route_table_association.a[0]: Still creating... [10s elapsed]
+aws_nat_gateway.turma3_grupo6[1]: Still creating... [20s elapsed]
+aws_nat_gateway.turma3_grupo6[0]: Still creating... [20s elapsed]
+aws_nat_gateway.turma3_grupo6[2]: Still creating... [20s elapsed]
+aws_route_table_association.a[0]: Still creating... [20s elapsed]
+aws_nat_gateway.turma3_grupo6[1]: Still creating... [30s elapsed]
+aws_nat_gateway.turma3_grupo6[0]: Still creating... [30s elapsed]
+aws_nat_gateway.turma3_grupo6[2]: Still creating... [30s elapsed]
+aws_route_table_association.a[0]: Still creating... [30s elapsed]
+aws_nat_gateway.turma3_grupo6[1]: Still creating... [40s elapsed]
+aws_nat_gateway.turma3_grupo6[0]: Still creating... [40s elapsed]
+aws_nat_gateway.turma3_grupo6[2]: Still creating... [40s elapsed]
+aws_route_table_association.a[0]: Still creating... [40s elapsed]
+aws_nat_gateway.turma3_grupo6[1]: Still creating... [50s elapsed]
+aws_nat_gateway.turma3_grupo6[0]: Still creating... [50s elapsed]
+aws_nat_gateway.turma3_grupo6[2]: Still creating... [50s elapsed]
+aws_route_table_association.a[0]: Still creating... [50s elapsed]
+aws_nat_gateway.turma3_grupo6[1]: Still creating... [1m0s elapsed]
+aws_nat_gateway.turma3_grupo6[0]: Still creating... [1m0s elapsed]
+aws_nat_gateway.turma3_grupo6[2]: Still creating... [1m0s elapsed]
+aws_route_table_association.a[0]: Still creating... [1m0s elapsed]
+aws_nat_gateway.turma3_grupo6[1]: Still creating... [1m10s elapsed]
+aws_nat_gateway.turma3_grupo6[0]: Still creating... [1m10s elapsed]
+aws_nat_gateway.turma3_grupo6[2]: Still creating... [1m10s elapsed]
+aws_route_table_association.a[0]: Still creating... [1m10s elapsed]
+aws_nat_gateway.turma3_grupo6[1]: Still creating... [1m20s elapsed]
+aws_nat_gateway.turma3_grupo6[0]: Still creating... [1m20s elapsed]
+aws_nat_gateway.turma3_grupo6[2]: Still creating... [1m20s elapsed]
+aws_route_table_association.a[0]: Still creating... [1m20s elapsed]
+aws_nat_gateway.turma3_grupo6[1]: Still creating... [1m30s elapsed]
+aws_nat_gateway.turma3_grupo6[0]: Still creating... [1m30s elapsed]
+aws_nat_gateway.turma3_grupo6[2]: Still creating... [1m30s elapsed]
+aws_route_table_association.a[0]: Still creating... [1m30s elapsed]
+aws_nat_gateway.turma3_grupo6[0]: Creation complete after 1m34s [id=nat-0e3b99edf6d27d333]
+aws_nat_gateway.turma3_grupo6[1]: Creation complete after 1m34s [id=nat-03baca779c5332641]
+aws_nat_gateway.turma3_grupo6[2]: Creation complete after 1m34s [id=nat-0c80aadf7281dfef1]
+aws_route_table.rt_terraform_priv[0]: Creating...
+aws_route_table.rt_terraform_priv[1]: Creating...
+aws_route_table.rt_terraform_priv[2]: Creating...
+aws_route_table.rt_terraform_priv[0]: Creation complete after 1s [id=rtb-028917041198d1f95]
+aws_route_table.rt_terraform_priv[1]: Creation complete after 1s [id=rtb-0aaacb6e32a02ac84]
+aws_route_table.rt_terraform_priv[2]: Creation complete after 1s [id=rtb-0af311eb79720b814]
+aws_route_table_association.b[2]: Creating...
+aws_route_table_association.b[1]: Creating...
+aws_route_table_association.b[0]: Creating...
+aws_route_table_association.b[2]: Creation complete after 0s [id=rtbassoc-0891dd46c67d1cd14]
+aws_route_table_association.b[0]: Creation complete after 0s [id=rtbassoc-0d56b2ae1198fe816]
+aws_route_table_association.b[1]: Creation complete after 0s [id=rtbassoc-0e20a2662dc53155c]
+aws_route_table_association.a[0]: Still creating... [1m40s elapsed]
+aws_route_table_association.a[0]: Creation complete after 1m44s [id=rtbassoc-0b2b9e21453aabe49]
+╷
+│ Warning: Value for undeclared variable
+│ 
+│ The root module does not declare a variable named "tipo" but a value was found in file "terraform.tfvars". If you meant to use this value, add a "variable" block to the configuration.
+│ 
+│ To silence these warnings, use TF_VAR_... environment variables to provide certain "global" settings to all configurations in your organization. To reduce the verbosity of these warnings, use the -compact-warnings option.
+╵
+
+Apply complete! Resources: 24 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+rt-priv = [
+  <<-EOT
+      rt: rtb-028917041198d1f95
+  
+  EOT,
+  <<-EOT
+      rt: rtb-0aaacb6e32a02ac84
+  
+  EOT,
+  <<-EOT
+      rt: rtb-0af311eb79720b814
+  
+  EOT,
+]
+subnets_priv = [
+  <<-EOT
+      vpc_name: sn-turma3-grupo6-aza-priv-tf
+      cidr_block: 10.60.40.0/24
+  
+  EOT,
+  <<-EOT
+      vpc_name: sn-turma3-grupo6-azb-priv-tf
+      cidr_block: 10.60.50.0/24
+  
+  EOT,
+  <<-EOT
+      vpc_name: sn-turma3-grupo6-azc-priv-tf
+      cidr_block: 10.60.60.0/24
+  
+  EOT,
+]
+subnets_pub = [
+  <<-EOT
+      vpc_name: sn-turma3-grupo6-aza-pub-tf
+      cidr_block: 10.60.10.0/24
+  
+  EOT,
+  <<-EOT
+      vpc_name: sn-turma3-grupo6-azb-pub-tf
+      cidr_block: 10.60.20.0/24
+  
+  EOT,
+  <<-EOT
+      vpc_name: sn-turma3-grupo6-azc-pub-tf
+      cidr_block: 10.60.30.0/24
+  
+  EOT,
+]
+summary = [
+  <<-EOT
+      ig: igw-0704d9b5225904020
+      vpc: vpc-06021516ae113876e
+      rt_pub: rtb-0d73eacb95d616289
+  
+  EOT,
+]
+ubuntu@turma3-talyson-dev:~/ProjetoFinal/isolated_network$ 
