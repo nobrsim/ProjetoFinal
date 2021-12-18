@@ -2,19 +2,19 @@ pipeline {
     agent any
 
     parameters {
-        password(name: 'DB_PASSWORD', defaultValue: '', description: 'Senha para database')
+        password(name: 'DB_PASSWORD', defaultValue: '123456', description: 'Senha para database')
     }
 
     stages {
         stage('Clone repo') {
             steps {
-                git url: 'https://github.com/ericohortolan/projetofinalGamaThree', branch: 'main'
+                git url: 'https://github.com/talysoncardoso/ProjetoFinal.git', branch: 'master'
             }
         }
         stage('Build Cluster') {
             steps {
-                sh 'chmod +x 04-pipelineSQL/deploy.sh'
-                sh "04-pipelineSQL/deploy.sh"
+                sh 'chmod +x pipelineMYSQL/deploy.sh'
+                sh "pipelineMYSQL/deploy.sh"
             }
         }
         //stage('Test Cluster') {
