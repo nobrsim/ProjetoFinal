@@ -4,6 +4,7 @@ pipeline {
     parameters {
          password(name: 'DB_PASSWORD', defaultValue: '', description: 'Senha do database')  
          string(name: 'SQL_DEV', defaultValue: '', description: 'IP do database de DEV')
+
     }    
 
     stages {
@@ -42,7 +43,8 @@ pipeline {
 
         stage('Create and Push Docker image') {
             steps {
-                sh "cd app-code && docker build -t nobrsim/projetofinal-web -f Dockerfile . && docker push nobrsim/projetofinal-web"
+                sh "docker login"
+                sh "cd app-code && docker build -t dockercursosimone/projetofinal-web -f Dockerfile . && docker push dockercursosimone/projetofinal-web"
                 echo 'pushing docker image..'
             }
         }
