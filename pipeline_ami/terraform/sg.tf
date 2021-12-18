@@ -33,6 +33,6 @@ resource "aws_security_group" "allow_ssh" {
   ]
 
   tags = {
-    Name = "allow_ssh_turma3-grupo6-tf"
+    Name = "allow_ssh_turma3-grupo6-pipeline-ami-tf"
   }
 }
