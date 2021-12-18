@@ -54,7 +54,7 @@ $ID_W1_DNS
 $ID_W2_DNS
 [ec2-k8s-w3]
 $ID_W3_DNS
-" > ../2-ansible/01-k8s-install-masters_e_workers/hosts
+" > 0-terraform/2-ansible/01-k8s-install-masters_e_workers/hosts
 
 echo "
 global
