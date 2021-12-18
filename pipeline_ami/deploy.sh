@@ -1,4 +1,4 @@
-cd ./pipeline_ami/terraform
+cd ./terraform
 
 echo "$(pwd)"
 
