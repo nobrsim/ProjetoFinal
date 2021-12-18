@@ -1,4 +1,4 @@
-cd ./terraform-prep
+cd ./terraform_prep
 
 echo "$(pwd)"
 echo "$(sudo su jenkins)"
