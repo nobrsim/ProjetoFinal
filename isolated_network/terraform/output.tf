@@ -18,10 +18,6 @@ output "subnets_priv" {
   ]
 }
 
-# output "nat-gw" {
-#   value = [${aws_nat_gateway.turma3_grupo6}] 
-# }
-
 output "rt-priv" {
   value       = [
     for item in aws_route_table.rt_terraform_priv:
@@ -31,14 +27,14 @@ output "rt-priv" {
   ]
 }
 
-# output "ng" {
-#   value       = [
-#     for item in aws_nat_gateway.turma3_grupo:
-#     <<EOF
-#     ng: ${item.id}
-#     EOF
-#   ]
-# }
+output "ng" {
+  value       = [
+    for item in aws_nat_gateway.turma3_grupo:
+    <<EOF
+    ng: ${item.id}
+    EOF
+  ]
+}
 
 
 output "summary" {
