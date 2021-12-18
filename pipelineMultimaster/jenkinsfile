@@ -13,14 +13,14 @@ pipeline {
         }
         stage('Build Cluster') {
             steps {
-                sh 'chmod +x pipelineMultimaster/0-k8s/deploy.sh'
-                sh 'pipelineMultimaster/0-k8s/deploy.sh'
+                sh 'chmod +x pipelineMultimaster/deploy.sh'
+                sh 'pipelineMultimaster/deploy.sh'
             }
         }
         stage('Test Cluster') {
             steps {
-                sh 'chmod +x pipelineMultimaster/0-k8s/test.sh'
-                sh 'pipelineMultimaster/0-k8s/test.sh'
+                sh 'chmod +x pipelineMultimaster/test.sh'
+                sh 'pipelineMultimaster/test.sh'
             }
         }
     }
