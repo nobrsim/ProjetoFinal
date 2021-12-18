@@ -1,5 +1,5 @@
 #!/bin/bash
-cd pipelineMultimaster/0-k8s/0-terraform
+cd pipelineMultimaster/0-terraform
 
 uri=$(terraform output | grep "k8s-master 1" | awk '{print $6 " " $7 " " $8 " " $9;exit}')
 
