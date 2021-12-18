@@ -1,8 +1,10 @@
 #!/bin/bash
 
-VERSAO=$(git describe --tags $(git rev-list --tags --max-count=1))
+cd pipeline_ami/terraform
 
-cd terraform
+echo "$(pwd)"
+
+VERSAO=$(git describe --tags $(git rev-list --tags --max-count=1))
 RESOURCE_ID=$(terraform output | grep resource_id | awk '{print $2;exit}' | sed -e "s/\",//g")
 
 cd ../terraform_ami
