@@ -1,0 +1,71 @@
+pipeline {
+    agent any
+
+    parameters {
+         password(name: 'DB_PASSWORD', defaultValue: '', description: 'Senha do database')  
+         string(name: 'SQL_DEV', defaultValue: '', description: 'IP do database de DEV')
+    }    
+
+    stages {
+        
+        stage('Clone Infra') {
+            steps {
+                git url: 'https://github.com/talysoncardoso/ProjetoFinal.git', branch: 'master'
+            }
+        }
+
+        stage('Clone App') {
+            steps {
+                sh 'rm -rf app-code'
+                sh 'mkdir app-code && cd app-code'
+                dir ('app-code'){
+                    git url: 'https://github.com/torneseumprogramador/spring-web-youtube.git', branch: 'deploy-docker'
+                }
+            }
+        }
+
+        stage('Build App') {
+            steps {
+                sh 'cd app-code && ./mvnw package -Dmaven.test.skip -DskipTests -Dmaven.javadoc.skip=true'
+                echo 'Building..'
+            }
+        }
+
+        stage('Test App') {
+            steps {
+                sh "export USER=root && export PASSWORD=\"$DB_PASSWORD\" && export DATABASE_URL='mysql://$SQL_DEV:3306/SpringWebYoutubeTest?useTimezone=true&serverTimezone=UTC' && cd app-code && ./mvnw test"
+                echo 'Testing....'
+                //sh 'nohup ./start.sh &'
+                //echo ' Starting....'
+            }
+        }
+
+        stage('Create and Push Docker image') {
+            steps {
+                sh "cd app-code && docker build -t nobrsim/projetofinal-web -f Dockerfile . && docker push nobrsim/projetofinal-web"
+                echo 'pushing docker image..'
+            }
+        }
+
+        stage('Deploy Dev') {
+            steps {
+                sh 'chmod +x pipelineAPP/deployDev.sh'
+                sh "pipelineAPP/deployDev.sh"
+            }
+        }
+
+        stage('Deploy Stag') {
+            steps {
+                sh 'chmod +x pipelineAPP/deployStag.sh'
+                sh "pipelineAPP/deployStag.sh"
+            }
+        }
+
+        stage('Deploy Prod') {
+            steps {
+                sh 'chmod +x pipelineAPP/deployProd.sh'
+                sh "pipelineAPP/deployProd.sh"
+            }
+        }
+    }
+}
