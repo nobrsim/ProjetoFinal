@@ -32,6 +32,7 @@ sleep 10 # Dá para melhor com um while
 cd ../ansible
 
 echo "Executando ansible ::::: [ ansible-playbook -i hosts provision.yml -u ubuntu --private-key /var/lib/jenkins/kp-turma3-talyson-1.pem ]"
+# ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts provision.yml -u ubuntu --private-key ~/.ssh/kp-turma3-talyson-1.pem
 ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts provision.yml -u ubuntu --private-key /var/lib/jenkins/kp-turma3-talyson-1.pem
 # ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts provision.yml -u ubuntu --private-key /home/ubuntu/chave-privada.pem
 
