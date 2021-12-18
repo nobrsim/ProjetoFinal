@@ -8,6 +8,8 @@ terraform apply -auto-approve
 echo "Aguardando criação de maquinas ..."
 sleep 10 # 10 segundos
 
+terraform output
+
 echo $"[ec2-mysql-dev]" > ../ansible/hosts # cria arquivo
 echo "$(terraform output | grep mysql_instance_dev | awk '{print $2;exit}' | sed -e "s/\",//g")" >> ../ansible/hosts # captura output faz split de espaco e replace de ",
 echo $"[ec2-mysql-stag]" >> ../ansible/hosts # cria arquivo
