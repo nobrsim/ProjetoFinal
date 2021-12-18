@@ -2,6 +2,8 @@ cd ./terraform
 
 echo "$(pwd)"
 
+echo "$(sudo su jenkins)"
+
 terraform init
 terraform fmt
 terraform apply --auto-approve
