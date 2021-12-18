@@ -1,6 +1,7 @@
 resource "aws_instance" "mysql_instance-dev" {
   subnet_id = data.aws_subnet.selected.id
   ami = data.aws_ami.ubuntu.id
+  associate_public_ip_address = true
   instance_type = "t2.large"
   key_name = "key_pair_ec2_dev"
   root_block_device {
@@ -16,6 +17,7 @@ resource "aws_instance" "mysql_instance-dev" {
 resource "aws_instance" "mysql_instance-stag" {
   subnet_id = data.aws_subnet.selected.id
   ami = data.aws_ami.ubuntu.id
+  associate_public_ip_address = true
   instance_type = "t2.large"
   key_name = "key_pair_ec2_dev"
   root_block_device {
@@ -31,6 +33,7 @@ resource "aws_instance" "mysql_instance-stag" {
 resource "aws_instance" "mysql_instance-prod" {
   subnet_id = data.aws_subnet.selected.id
   ami = data.aws_ami.ubuntu.id
+  associate_public_ip_address = true
   instance_type = "t2.large"
   key_name = "key_pair_ec2_dev"
   root_block_device {
