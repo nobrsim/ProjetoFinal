@@ -3,8 +3,8 @@ cd pipeline_ami/terraform_prep
 echo "$(pwd)"
 # echo "$(sudo su jenkins)"
 
-# terraform init # Comentado temporáriamento pata testes
-# terraform fmt # Comentado temporáriamento pata testes
+terraform init # Comentado temporáriamento pata testes
+terraform fmt # Comentado temporáriamento pata testes
 terraform apply --auto-approve
 
 echo "Criando variável de ambiente SUBNET_ID"
@@ -16,8 +16,8 @@ cd ../terraform
 
 echo "$(pwd)"
 
-# terraform init # Comentado temporáriamento pata testes
-# terraform fmt # Comentado temporáriamento pata testes
+terraform init # Comentado temporáriamento pata testes
+terraform fmt # Comentado temporáriamento pata testes
 terraform apply --auto-approve
 
 echo "Aguardando criação de maquinas ..."
