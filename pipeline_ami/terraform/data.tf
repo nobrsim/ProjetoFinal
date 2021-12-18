@@ -25,11 +25,11 @@ data "aws_vpc" "selected" {
   }
 }
 
-data "aws_subnet_ids" "selected" {
-  vpc_id = data.aws_vpc.selected.id
-}
+# data "aws_subnet_ids" "selected" {
+#   vpc_id = data.aws_vpc.selected.id
+# }
 
-data "aws_subnet" "selected" {
-  for_each = data.aws_subnet_ids.selected.ids
-  id       = each.value
-}
+# data "aws_subnet" "selected" {
+#   for_each = data.aws_subnet_ids.selected.ids
+#   id       = each.value
+# }

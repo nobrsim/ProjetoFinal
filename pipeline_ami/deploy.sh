@@ -1,7 +1,6 @@
-cd ./terraform
+cd ./terraform-prep
 
 echo "$(pwd)"
-
 echo "$(sudo su jenkins)"
 
 terraform init
@@ -12,6 +11,14 @@ echo "Criando variável de ambiente SUBNET_ID"
 SUBNET_ID=$(terraform output | grep aza-pub | awk '{print $1;exit}' | sed 's/"//g')
 
 export TF_VAR_subnet_id=$SUBNET_ID
+
+cd ../terraform
+
+echo "$(pwd)"
+
+terraform init
+terraform fmt
+terraform apply --auto-approve
 
 echo "Aguardando criação de maquinas ..."
 sleep 10 # Dá para melhor com um while
