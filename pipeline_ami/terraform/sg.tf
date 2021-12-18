@@ -5,11 +5,11 @@ resource "aws_security_group" "allow_ssh" {
 
   ingress = [
     {
-      description      = "SSH from VPC"
-      from_port        = 22
-      to_port          = 22
-      protocol         = "tcp"
-      cidr_blocks      = ["0.0.0.0/0"]
+      description = "SSH from VPC"
+      from_port   = 22
+      to_port     = 22
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
       # cidr_blocks      = ["${chomp(data.http.myip.body)}/32"]
       ipv6_cidr_blocks = ["::/0"]
       prefix_list_ids  = null,

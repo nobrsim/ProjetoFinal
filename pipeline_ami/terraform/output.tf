@@ -7,10 +7,3 @@ output "ec2" {
   ]
 }
 
-
-output "output_subnetes" {
-  value = [
-    for item in data.aws_subnet.selected :
-    "${item.id} - ${item.cidr_block} - ${item.tags.Name}"
-  ]
-}

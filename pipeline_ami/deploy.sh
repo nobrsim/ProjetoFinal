@@ -1,7 +1,7 @@
-cd ./terraform_prep
+cd pipeline_ami/terraform_prep
 
 echo "$(pwd)"
-echo "$(sudo su jenkins)"
+# echo "$(sudo su jenkins)"
 
 terraform init
 terraform fmt
