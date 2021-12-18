@@ -20,7 +20,7 @@ resource "aws_route_table" "rt_terraform_pub" {
   ]
 
   tags = {
-    Name = "rt-turma3-talyson-tf"
+    Name = "rt-turma3-grupo6-tf"
   }
 }
 

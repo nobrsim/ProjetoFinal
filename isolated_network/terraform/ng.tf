@@ -2,12 +2,6 @@ resource "aws_eip" "nat_gateway" {
   count = 3
   vpc = true
 }
-# resource "aws_eip" "nat_gateway1b" {
-#   vpc = true
-# }
-# resource "aws_eip" "nat_gateway1c" {
-#   vpc = true
-# }
 
 resource "aws_nat_gateway" "turma3_grupo6" {
   count             = length(keys(var.azs_priv))

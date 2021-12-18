@@ -1,4 +1,4 @@
-output "subnets" {
+output "subnets_pub" {
   value = [
     for item in aws_subnet.my_subnets :
     <<EOF
@@ -8,21 +8,46 @@ output "subnets" {
   ]
 }
 
+output "subnets_priv" {
+  value = [
+    for item in aws_subnet.subnets_priv :
+    <<EOF
+    vpc_name: ${item.tags.Name}
+    cidr_block: ${item.cidr_block}
+    EOF
+  ]
+}
 
-# output ec2 {
+# output "nat-gw" {
+#   value = [${aws_nat_gateway.turma3_grupo6}] 
+# }
+
+output "rt-priv" {
+  value       = [
+    for item in aws_route_table.rt_terraform_priv:
+    <<EOF
+    rt: ${item.id}
+    EOF
+  ]
+}
+
+# output "ng" {
 #   value       = [
-#     for item in aws_instance.ec2:
+#     for item in aws_nat_gateway.turma3_grupo:
 #     <<EOF
-  
-#     public_ip: ${item.public_ip}
-#     private_ip: ${item.private_ip}
-#     name: ${item.tags.Name}
-#     ssh -i ./id_rsa ubuntu@${item.private_dns}
-#     ssh -i ./id_rsa ubuntu@${item.public_ip}
-#     sg: ${aws_security_group.allow_ssh.id}
-#     key_name:${item.key_name}
-#     subnet_id: ${item.subnet_id}
-#     vpc_id: ${aws_vpc.main.id}
+#     ng: ${item.id}
 #     EOF
 #   ]
 # }
+
+
+output "summary" {
+  value       = [
+    <<EOF
+    ig: ${aws_internet_gateway.gw.id}
+    vpc: ${aws_vpc.main.id}
+    rt_pub: ${aws_route_table.rt_terraform_pub.id}
+    EOF
+
+  ]
+}
