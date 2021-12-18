@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'AMI_ID', defaultValue: '', description: 'id da ami do kubernets')
+    }
+
+    stages {
+        stage('Clone repo') {
+            steps {
+                git url: 'https://github.com/talysoncardoso/ProjetoFinal.git', branch: 'main'
+            }
+        }
+        stage('Build Cluster') {
+            steps {
+                sh 'chmod +x pipelineMultimaster/0-k8s/deploy.sh'
+                sh 'pipelineMultimaster/0-k8s/deploy.sh'
+            }
+        }
+        stage('Test Cluster') {
+            steps {
+                sh 'chmod +x pipelineMultimaster/0-k8s/test.sh'
+                sh 'pipelineMultimaster/0-k8s/test.sh'
+            }
+        }
+    }
+}
