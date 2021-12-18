@@ -17,10 +17,6 @@ pipeline {
                 sh "pipelineMYSQL/deploy.sh"
             }
         }
-        //stage('Test Cluster') {
-        //    steps {
-        //        sh '04-pipelineSQL/test.sh'
-        //    }
-        //}
+
     }
 }
