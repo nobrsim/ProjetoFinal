@@ -34,7 +34,7 @@ pipeline {
 
         stage('Test App') {
             steps {
-                //sh "export USER=root && export PASSWORD=\"$DB_PASSWORD\" && export DATABASE_URL='mysql://$SQL_DEV:3306/SpringWebYoutubeTest?useTimezone=true&serverTimezone=UTC' && cd app-code && ./mvnw test"
+                sh "export USER=root && export PASSWORD="$DB_PASSWORD\" && export DATABASE_URL='mysql://$SQL_DEV:3306/SpringWebYoutubeTest?useTimezone=true&serverTimezone=UTC' && cd app-code && ./mvnw test"
                 echo 'Testing....'
                 //sh 'nohup ./start.sh &'
                 //echo ' Starting....'
@@ -43,7 +43,7 @@ pipeline {
 
         stage('Create and Push Docker image') {
             steps {
-                sh "docker login"
+                //sh "docker login"
                 sh "cd app-code && docker build -t dockercursosimone/projetofinal-web -f Dockerfile . && docker push dockercursosimone/projetofinal-web"
                 echo 'pushing docker image..'
             }
