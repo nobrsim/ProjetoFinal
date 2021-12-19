@@ -90,4 +90,5 @@
         dest: "/tmp/dumpsql.sql"
     
     - name: "Copia Dump para MySQL"
+      become: yes
       shell: "mysql -u root -proot < /tmp/dumpsql.sql"
