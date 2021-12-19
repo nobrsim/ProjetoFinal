@@ -5,7 +5,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 80
+    - port: 8080
       nodePort: 30002 # 30000 ~ 32767
   selector:
     app: pod-javadb-prod

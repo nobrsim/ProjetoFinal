@@ -1,4 +1,4 @@
-use SpringWebYoutubeTest;
+use SpringWebYoutube;
 
 DROP TABLE IF EXISTS `administradores`;
 CREATE TABLE `administradores` (
