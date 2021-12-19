@@ -7,6 +7,9 @@
         src: "k8s-deploy"
         dest: "~/"
 
+    - name: "delete pods executando"
+      shell: cd ~/k8s-deploy | kubectl delete --all deployments  
+
     - name: "Aplicar configmap dev"
       shell: kubectl apply -f ~/k8s-deploy/mysql-configmap-dev.yml
 
