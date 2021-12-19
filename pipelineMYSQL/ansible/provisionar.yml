@@ -79,7 +79,7 @@
     - name: "Cria o banco de dados MySQL"
       become: yes
       mysql_db:
-        name: SpringWebYoutube
+        name: SpringWebYoutubeTest
         login_user: "root"
         login_password: "{{ lookup('env', 'DB_PASSWORD') }}"
         state: present
