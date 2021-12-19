@@ -42,7 +42,9 @@ pipeline {
         stage('Create and Push Docker image') {
             steps {
                 //sh "docker login"
-                sh "cd app-code && docker build -t dockercursosimone/projetofinal-web -f Dockerfile . && docker push dockercursosimone/projetofinal-web"
+                sh "cd app-code"
+                sh "sudo docker build -t dockercursosimone/docker-projeto-final -f Dockerfile ."
+                sh "sudo docker push dockercursosimone/docker-projeto-final"
                 echo 'pushing docker image..'
             }
         }
