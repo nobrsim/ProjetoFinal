@@ -3,8 +3,6 @@ pipeline {
 
     parameters {
          password(name: 'DB_PASSWORD', defaultValue: '', description: 'Senha do database')  
-         string(name: 'SQL_DEV', defaultValue: '', description: 'IP do database de DEV')
-
     }    
 
     stages {
@@ -34,7 +32,7 @@ pipeline {
 
         stage('Test App') {
             steps {
-                sh "export USER=root && export PASSWORD="$DB_PASSWORD\" && export DATABASE_URL='mysql://$SQL_DEV:3306/SpringWebYoutubeTest?useTimezone=true&serverTimezone=UTC' && cd app-code && ./mvnw test"
+                sh "export USER=root && export PASSWORD="$DB_PASSWORD\" && export DATABASE_URL='mysql://10.20.64.40:3306/SpringWebYoutubeTest?useTimezone=true&serverTimezone=UTC'"
                 echo 'Testing....'
                 //sh 'nohup ./start.sh &'
                 //echo ' Starting....'
