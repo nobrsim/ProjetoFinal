@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
         - name: container-pod-javadb-stage
-          image: didox/crud-java-login:latest
+          image: didox/crud-java-login:v0.0.1
           env:
             - name: USER
               valueFrom:

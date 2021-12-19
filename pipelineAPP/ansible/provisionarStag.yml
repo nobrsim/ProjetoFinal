@@ -12,6 +12,10 @@
     - name: "Aplicar secret"
       shell: kubectl apply -f ~/k8s-deploy/mysql-secret.yml
 
+    - name: "Aplicar mysql"
+      shell: kubectl apply -f ~/k8s-deploy/mysqldeployment.yml
+
+
     - name: "Aplicar deployment stage"
       shell: kubectl apply -f ~/k8s-deploy/deployment-stage.yml
 
