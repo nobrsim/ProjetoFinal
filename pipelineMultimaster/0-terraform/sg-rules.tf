@@ -7,6 +7,16 @@ resource "aws_security_group_rule" "acessos_workers_rule_ssh" {
   cidr_blocks      = ["0.0.0.0/0"]
   security_group_id = aws_security_group.acessos_workers.id
 }
+resource "aws_security_group_rule" "acessos_master_rule_tcp1" {
+  type             = "ingress"
+  description      = "Libera acessos"
+  from_port        = 30000
+  to_port          = 30000
+  protocol         = "tcp"
+  cidr_blocks      = ["0.0.0.0/0"]
+  security_group_id = aws_security_group.acessos_masters.id
+}
+
 resource "aws_security_group_rule" "acessos_workers_masters" {
   type             = "ingress"
   description      = "Libera acessos"
