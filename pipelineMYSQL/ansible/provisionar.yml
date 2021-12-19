@@ -30,7 +30,7 @@
       become: yes
       mysql_user:
         name: "root"
-        host_all: true
+        host: "%"
         password: "{{ lookup('env', 'DB_PASSWORD') }}"
         priv: "*.*:ALL,GRANT"
         state: present
@@ -79,7 +79,7 @@
     - name: "Cria o banco de dados MySQL"
       become: yes
       mysql_db:
-        name: SpringWebYoutubeTest
+        name: SpringWebYoutube
         login_user: "root"
         login_password: "{{ lookup('env', 'DB_PASSWORD') }}"
         state: present
