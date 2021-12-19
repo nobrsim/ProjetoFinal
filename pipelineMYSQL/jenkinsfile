@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    parameters {
-        password(name: 'DB_PASSWORD', defaultValue: '123456', description: 'Senha para database')
-    }
+   parameters {
+        password(name: 'DB_PASSWORD', defaultValue: 'root', description: 'Senha para database')
+   }
 
     stages {
         stage('Clone repo') {
