@@ -31,7 +31,7 @@
       mysql_user:
         name: "root"
         host: "%"
-        password: "{{ lookup('env', 'DB_PASSWORD') }}"
+        password: "root"
         priv: "*.*:ALL,GRANT"
         state: present
         check_implicit_admin: true
