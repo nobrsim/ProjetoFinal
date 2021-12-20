@@ -1,2 +1,2 @@
-versao = "1.0"
+versao = "2.0"
 
