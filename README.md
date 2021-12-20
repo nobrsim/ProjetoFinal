@@ -21,3 +21,23 @@ Em network está disposto o código terraform para provisionamento de uma rede n
 Utilize os scripts de shell script para fazer o deploy ou o destroy do ambiente.
 
 <h2 align="left">Jenkins</h2>
+Em jenkins estão dispostos os códigos terraform e ansible para provisionamento de uma EC2 para rodar o jenkins no qual os pipelines rodarão.
+Utilize os scripts de shell script para fazer o deploy ou o destroy do ambiente.
+
+<h2 align="left">PipelineAMI</h2>
+Em pipelineAMI estão dispostos os códigos terraform e ansible para provisionamento para provisionamento de uma EC2 na qual instalamos os pacotes necessários para o pleno funcionamento do docker. 
+
+Aqui o objetivo é gerar uma EC2, prepará-la, com base nessa instância, subir uma AMI na AWS e destruir a EC2 posteriormente.
+
+<h2 align="left">PipelineMultimaster</h2>
+Em pipelineMultimaster estão dispostos os códigos terraform e ansible para provisionamento de um cluster multimaster utilizando o kubernetes com:
+
+    1. Uma máquina ec2 para servir de Proxy
+    2. Três máquinas ec2 para servir de Masters
+    3. Três máquinas ec2 para servir de Workers
+ 
+<h2 align="left">PipelineMYSQL</h2>
+Em pipelineMYSQL estão dispostos os códigos de terraform e ansible para provisionamento de três máquinas ec2 nas quais serão instalados o mysql.
+
+<h2 align="left">PipelineAPP</h2>
+Em pipelineAPP estão dispostos os códigos de terraform e ansible para deploy de uma aplicação no ambiente criado anteriormente 
