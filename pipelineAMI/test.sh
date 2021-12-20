@@ -1,5 +1,5 @@
 #!/bin/bash
-cd pipeline_ami/terraform
+cd pipelineAMI/terraform
 
 uri=$(terraform output | grep public_ip | awk '{print $2;exit}' | sed -e "s/\",//g")
 
