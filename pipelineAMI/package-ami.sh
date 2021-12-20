@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd pipeline_ami/terraform
+cd pipelineAMI/terraform
 
 echo "$(pwd)"
 
