@@ -18,23 +18,6 @@ data "aws_vpc" "selected" {
   }
 }
 
-# data "aws_subnet_ids" "selected" {
-#   vpc_id = data.aws_vpc.selected.id
-# }
-
-# data "aws_subnet" "selected" {
-#   for_each = data.aws_subnet_ids.selected.ids
-#   id       = each.value
-# }
-
-# output "output_subnetes" {
-#   value = [
-#     for item in data.aws_subnet.selected :
-#     "${item.id} - ${item.cidr_block} - ${item.tags.Name}"
-#   ]
-# }
-
-
 resource "aws_instance" "jenkins" {
   subnet_id                   = var.subnet_id
   ami                         = "ami-0e66f5495b4efdd0f"
@@ -100,7 +83,6 @@ resource "aws_security_group" "jenkins" {
   }
 }
 
-# terraform refresh para mostrar o ssh
 output "jenkins" {
   value = [
     "jenkins",
@@ -112,6 +94,3 @@ output "jenkins" {
   ]
 }
 
-# output "jenkins_completo" {
-#   value = aws_instance.jenkins
-# }
