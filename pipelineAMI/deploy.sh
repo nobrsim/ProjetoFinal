@@ -2,13 +2,8 @@ cd pipelineAMI/terraform_prep
 
 echo "$(pwd)"
 
-<<<<<<< HEAD:pipeline_ami/deploy.sh
-terraform init # Comentado temporáriamento pata testes
-#terraform fmt # Comentado temporáriamento pata testes
-=======
 terraform init 
 terraform fmt 
->>>>>>> dc1b8b648e04c70bcdfb1e38c724f5cb003bf694:pipelineAMI/deploy.sh
 terraform apply --auto-approve
 
 echo "Criando variável de ambiente SUBNET_ID"
