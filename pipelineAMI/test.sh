@@ -3,7 +3,8 @@ cd pipelineAMI/terraform
 
 uri=$(terraform output | grep public_ip | awk '{print $2;exit}' | sed -e "s/\",//g")
 
-kube_adm=$(ssh -i /var/lib/jenkins/chave-privada.pem ubuntu@$uri 'kubeadm version')
+# kube_adm=$(ssh -i /var/lib/jenkins/chave-privada.pem ubuntu@$uri 'kubeadm version')
+kube_adm=$(ssh -i /var/lib/jenkins/kp-turma3-talyson-1.pem ubuntu@$uri 'kubeadm version')
 
 echo $kube_adm
 
