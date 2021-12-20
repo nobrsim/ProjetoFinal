@@ -4,7 +4,7 @@ echo "$(pwd)"
 # echo "$(sudo su jenkins)"
 
 terraform init # Comentado temporáriamento pata testes
-terraform fmt # Comentado temporáriamento pata testes
+#terraform fmt # Comentado temporáriamento pata testes
 terraform apply --auto-approve
 
 echo "Criando variável de ambiente SUBNET_ID"
@@ -33,7 +33,7 @@ cd ../ansible
 
 echo "Executando ansible ::::: [ ansible-playbook -i hosts provision.yml -u ubuntu --private-key /var/lib/jenkins/kp-turma3-talyson-1.pem ]"
 # ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts provision.yml -u ubuntu --private-key ~/.ssh/kp-turma3-talyson-1.pem
-ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts provision.yml -u ubuntu --private-key /var/lib/jenkins/kp-turma3-talyson-1.pem
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts provision.yml -u ubuntu --private-key /var/lib/jenkins/chave-privada.pem
 # ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts provision.yml -u ubuntu --private-key /home/ubuntu/chave-privada.pem
 
 
