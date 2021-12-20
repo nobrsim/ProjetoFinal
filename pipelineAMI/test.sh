@@ -9,7 +9,8 @@ echo $kube_adm
 
 regex_kube='kubeadm version:'
 
-docker=$(ssh -i /var/lib/jenkins/chave-privada.pem ubuntu@$uri 'docker --version')
+# docker=$(ssh -i /var/lib/jenkins/chave-privada.pem ubuntu@$uri 'docker --version')
+docker=$(ssh -i /var/lib/jenkins/kp-turma3-talyson-1.pem ubuntu@$uri 'docker --version')
 
 echo $docker
 
