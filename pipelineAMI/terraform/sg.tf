@@ -1,5 +1,5 @@
 resource "aws_security_group" "allow_ssh" {
-  name        = "sec_gr-turma3-grupo6-pipeline-ami-tf"
+  name        = "group-turma3-grupo6-pipeline-ami-tf"
   description = "Allow SSH inbound traffic"
   vpc_id      = data.aws_vpc.selected.id
 
@@ -33,6 +33,6 @@ resource "aws_security_group" "allow_ssh" {
   ]
 
   tags = {
-    Name = "allow_ssh_turma3-grupo6-pipeline-ami-tf"
+    Name = "group-turma3-grupo6-pipeline-ami-tf"
   }
 }
