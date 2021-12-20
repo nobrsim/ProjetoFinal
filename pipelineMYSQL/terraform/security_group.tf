@@ -1,5 +1,5 @@
 resource "aws_security_group" "projetofinal-mysql" {
-  name        = "sec-group-turma3-grupo6-mysql"
+  name        = "sec-group-talyson-turma3-grupo6-mysql"
   description = "acessos inbound traffic"
   vpc_id      = data.aws_vpc.selected.id
   ingress = [
