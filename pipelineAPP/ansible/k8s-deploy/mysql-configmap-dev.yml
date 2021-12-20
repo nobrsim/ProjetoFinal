@@ -5,6 +5,6 @@ metadata:
 data:
   USER: root
   # PASSWORD: {{ DB_PASSWORD }}
-  DATABASE_URL: mysql://10.20.64.40:3306/SpringWebYoutubeTest?useTimezone=true&serverTimezone=UTC&createDatabaseIfNotExist=true
+  DATABASE_URL: mysql://10.20.64.208:3306/SpringWebYoutubeTest?useTimezone=true&serverTimezone=UTC&createDatabaseIfNotExist=true
   
   # DATABASE_URL: mysql://10.111.41.255:3306/SpringWebYoutubeTest?useTimezone=true&serverTimezone=UTC # caso esteja vinculando um clusterIP na mão

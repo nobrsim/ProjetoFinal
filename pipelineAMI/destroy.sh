@@ -1,4 +1,4 @@
-cd pipeline_ami/terraform_prep
+cd pipelineAMI/terraform_prep
 
 echo "$(pwd)"
 # echo "$(sudo su jenkins)"
