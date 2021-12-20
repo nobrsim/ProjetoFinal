@@ -1,6 +1,6 @@
 resource "aws_instance" "k8s_proxy" {
   ami           = data.aws_ami.ami-ubuntu.id
-  subnet_id = var.subnet-az-a
+  subnet_id = var.subnet_id
   instance_type = "t2.medium"
   key_name      = var.key_pair_name
   associate_public_ip_address = true
@@ -18,7 +18,7 @@ resource "aws_instance" "k8s_proxy" {
 resource "aws_instance" "k8s_masters" {
   ami           = data.aws_ami.ami-ubuntu.id
   associate_public_ip_address = true
-  subnet_id = var.subnet-az-a
+  subnet_id = var.subnet_id
   instance_type = "t2.large"
   key_name      = var.key_pair_name
   count         = 3
@@ -41,7 +41,7 @@ resource "aws_instance" "k8s_workers" {
   instance_type = "t2.medium"
   key_name      = var.key_pair_name
   associate_public_ip_address = true
-  subnet_id = var.subnet-az-a
+  subnet_id = var.subnet_id
   count         = 3
   root_block_device {
     delete_on_termination = true

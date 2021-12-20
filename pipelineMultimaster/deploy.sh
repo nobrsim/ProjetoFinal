@@ -1,11 +1,15 @@
-#!/bin/bash
+cd pipelineMultimaster/terraform_prep
 
-# ID_M1_DNS="ubuntu@ec2-18-234-97-123.compute-1.amazonaws.com"
-# ID_M1_DNS=$(echo "$ID_M1_DNS" | cut -b 8-)
-# echo ${ID_M1_DNS}
+echo "$(pwd)"
 
-#### idéia para buscar itens do debugger do ansible ####
-# | grep -oP "(kubeadm join.*?certificate-key.*?)'" | sed 's/\\//g' | sed "s/'//g" | sed "s/'t//g" | sed "s/,//g"
+terraform init 
+#terraform fmt 
+terraform apply --auto-approve
+
+echo "Criando variável de ambiente SUBNET_ID"
+SUBNET_ID=$(terraform output | grep aza-pub | awk '{print $1;exit}' | sed 's/"//g')
+
+export TF_VAR_subnet_id=$SUBNET_ID
 
 cd pipelineMultimaster/0-terraform
 terraform init
@@ -124,7 +128,8 @@ ff02::3 ip6-allhosts
 
 cd ../2-ansible/01-k8s-install-masters_e_workers
 
-ANSIBLE_OUT=$(ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts provisionar.yml -u ubuntu --private-key /var/lib/jenkins/chave-privada.pem)
+# ANSIBLE_OUT=$(ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts provisionar.yml -u ubuntu --private-key /var/lib/jenkins/chave-privada.pem)
+ANSIBLE_OUT=$(ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts provisionar.yml -u ubuntu --private-key /var/lib/jenkins/kp-turma3-talyson-1.pem)
 
 echo $ANSIBLE_OUT
 #### Mac ###
@@ -181,4 +186,5 @@ cat <<EOF > 2-provisionar-k8s-master-auto-shell.yml
         msg: " '{{ ps.stdout_lines }}' "
 EOF
 
-ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts 2-provisionar-k8s-master-auto-shell.yml -u ubuntu --private-key /var/lib/jenkins/chave-privada.pem
+# ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts 2-provisionar-k8s-master-auto-shell.yml -u ubuntu --private-key /var/lib/jenkins/chave-privada.pem
+ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i hosts 2-provisionar-k8s-master-auto-shell.yml -u ubuntu --private-key /var/lib/jenkins/kp-turma3-talyson-1.pem
