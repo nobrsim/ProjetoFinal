@@ -1,10 +1,3 @@
-data "aws_vpc" "selected" {
-  filter {
-    name   = "tag:Name"
-    values = [var.vpc_id]
-  }
-}
-
 resource "aws_security_group" "acessos_masters" {
   name        = "k8s-acessos_masters-${var.meu_nome}"
   description = "acessos inbound traffic"

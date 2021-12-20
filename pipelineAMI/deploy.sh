@@ -1,10 +1,14 @@
 cd pipeline_ami/terraform_prep
 
 echo "$(pwd)"
-# echo "$(sudo su jenkins)"
 
+<<<<<<< HEAD:pipeline_ami/deploy.sh
 terraform init # Comentado temporáriamento pata testes
 #terraform fmt # Comentado temporáriamento pata testes
+=======
+terraform init 
+terraform fmt 
+>>>>>>> dc1b8b648e04c70bcdfb1e38c724f5cb003bf694:pipelineAMI/deploy.sh
 terraform apply --auto-approve
 
 echo "Criando variável de ambiente SUBNET_ID"
@@ -16,14 +20,14 @@ cd ../terraform
 
 echo "$(pwd)"
 
-terraform init # Comentado temporáriamento pata testes
-terraform fmt # Comentado temporáriamento pata testes
+terraform init 
+terraform fmt 
 terraform apply --auto-approve
 
 echo "Aguardando criação de maquinas ..."
 sleep 10 # Dá para melhor com um while
 
-echo "[ec2-img]" > ../ansible/hosts # cria arquivo
+echo "[ec2-img]" > ../ansible/hosts 
 echo "$(terraform output | grep public_ip | awk '{print $2;exit}')" | sed -e "s/\",//g" >> ../ansible/hosts 
 
 echo "Aguardando criação de maquinas ..."

@@ -1,15 +1,3 @@
-data "aws_ami" "ami-ubuntu" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-  }
-  owners = ["099720109477"]
-}
-
-
-
 resource "aws_instance" "k8s_proxy" {
   ami           = data.aws_ami.ami-ubuntu.id
   subnet_id = var.subnet-az-a
