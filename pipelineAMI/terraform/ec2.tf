@@ -4,8 +4,8 @@ resource "aws_instance" "ec2" {
   instance_type = var.tipo
   # key_name                    = aws_key_pair.public_key.id
   # key_name                    = "kp-turma-victor-dev"
-  #key_name                    = "kp-turma3-talyson-1"
-  key_name                    = "key_pair_ec2_dev"
+  key_name                    = "kp-turma3-talyson-1"
+  # key_name                    = "key_pair_ec2_dev"
   associate_public_ip_address = true
   vpc_security_group_ids      = ["${aws_security_group.allow_ssh.id}"]
   root_block_device {
