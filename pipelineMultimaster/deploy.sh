@@ -11,7 +11,7 @@ SUBNET_ID=$(terraform output | grep aza-pub | awk '{print $1;exit}' | sed 's/"//
 
 export TF_VAR_subnet_id=$SUBNET_ID
 
-cd pipelineMultimaster/0-terraform
+cd ../0-terraform
 terraform init
 terraform apply -auto-approve
 
