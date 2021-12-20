@@ -40,4 +40,4 @@ Em pipelineMultimaster estão dispostos os códigos terraform e ansible para pro
 Em pipelineMYSQL estão dispostos os códigos de terraform e ansible para provisionamento de três máquinas ec2 nas quais serão instalados o mysql.
 
 <h2 align="left">PipelineAPP</h2>
-Em pipelineAPP estão dispostos os códigos de terraform e ansible para deploy de uma aplicação no ambiente criado anteriormente 
+Em pipelineAPP estão dispostos os códigos de terraform e ansible para deploy de uma aplicação no ambiente criado anteriormente. 
